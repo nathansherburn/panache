@@ -8,20 +8,20 @@ $(document).ready(function () {
   background2.style.backgroundImage = 'url(images/im' + (imageNum).toString() + 'fade.jpg)';
   background1.style.backgroundImage = 'url(images/im' + (imageNum+1).toString() + 'fade.jpg)';
 
-  setInterval(getNextImage,3000);
+  setInterval(getNextImage,6000);
 
   function getNextImage() {
     if (background2IsOnTop) {
       console.log('background2IsOnTop')
       background1.style.backgroundImage = 'url(images/im' + (imageNum).toString() + 'fade.jpg)';
-      $("#background1").animate({ opacity: 1 }, 1500);
-      $("#background2").animate({ opacity: 0 }, 1500);
+      $("#background1").animate({ opacity: 1 }, 3000);
+      $("#background2").animate({ opacity: 0 }, 3000);
       background2IsOnTop = false;
     } else {
       console.log('background2Is NOT OnTop')
       background2.style.backgroundImage = 'url(images/im' + (imageNum).toString() + 'fade.jpg)';
-      $("#background1").animate({ opacity: 0 }, 1500);
-      $("#background2").animate({ opacity: 1 }, 1500);
+      $("#background1").animate({ opacity: 0 }, 3000);
+      $("#background2").animate({ opacity: 1 }, 3000);
       background2IsOnTop = true;
     }
     var newImageNum = Math.floor(Math.random()*3)+1;
