@@ -13,11 +13,11 @@
 		<script type="text/javascript">
 			function hgsubmit() {
 				if (/\S+/.test(document.hgmailer.name.value) == false) alert ("Please provide your name.");
-				else if (/^\S+@[a-z0-9_.-]+\.[a-z]{2,6}$/i.test(document.hgmailer.email.value) == false) alert ("A valid email address is required.");
-				else if (/\S+/.test(document.hgmailer.comment.value) == false) alert ("Your email content is needed.");
+				else if (/^\S+@[a-z0-9_.-]+\.[a-z]{2,6}$/i.test(document.hgmailer.email.value) == false) alert ("Please check your email address.");
+				else if (/\S+/.test(document.hgmailer.comment.value) == false) alert ("Please write your message in the box.");
 				else {
 					document.hgmailer.submit();
-					alert ('Thank you!\nYour email is sent.');
+					alert ('Thank you!');
 				}
 			}
 		</script>
@@ -73,9 +73,8 @@
 						<br/>
 						<b>Your Email:</b><input class="inputText"  type="text" name="email"><br/>
 						<br/>
-						<b>Message:</b><textarea class="inputText" name="comment" style="width:100%;height:100px;"></textarea>
+						<b>Message:</b><textarea class="inputText" name="comment" style="width:100%; height:100px;"></textarea>
 						<input class="panacheButton" type="button" value="Send Message" onclick="hgsubmit();">
-						<input type="hidden" name="redirect" value="http://panachetraining.com.au/contact_us.html">
 					</form>
 					</div>
 					<br class="clear" />

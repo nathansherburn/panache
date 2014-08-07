@@ -35,45 +35,52 @@
 		</div>
 
 		<div id="content">
-		<div id="maincontent">
-				<h1>Register Your Interest</h1>
-				<b>Your Name:</b><input class="inputText" type="text" name="name"><br/>
-				<br/>
-				<b>Your City:</b><input class="inputText"  type="text" name="email"><br/>
-				<br/>
-				<b>Your Email:</b><input class="inputText"  type="text" name="email"><br/>
-				<br/>
-				<br/>
-		</div>
-		<div id='separator'></div>
-		<div id="sidecontent">
 
-				<h2>What are you interested in?</h2>
-				<input type='checkbox' name='training' value='test'>Accounting for Non Accountants<br>
-				<input type='checkbox' name='training' value='test'>Finance For Non-Financial Managers<br>
-				<input type='checkbox' name='training' value='test'>Business Writing<br>
-				<input type='checkbox' name='training' value='test'>Contract Management<br>
-				<input type='checkbox' name='training' value='test'>Strategic Planning<br>
-				<input type='checkbox' name='training' value='test'>Business Planning<br>
-				<input type='checkbox' name='training' value='test'>Operational Planning<br>
-				<input type='checkbox' name='training' value='test'>Budgeting and Performance Measurement<br>
-				<input type='checkbox' name='training' value='test'>Developing and Managing KPI's<br>
-				<input type='checkbox' name='training' value='test'>The Balanced Scorecard and Dashboard Reporting<br>
-				<input type='checkbox' name='training' value='test'>Workplace Safety<br>
-				<input type='checkbox' name='training' value='test'>Handling and Managing Conflict<br>
-				<input type='checkbox' name='training' value='test'>Implementing Customer Service<br>
-				<input type='checkbox' name='training' value='test'>Managing Customer Service<br>
-				<input type='checkbox' name='training' value='test'>Continuous Improvement<br>
-				<input type='checkbox' name='training' value='test'>Time Management<br>
-				<input type='checkbox' name='training' value='test'>Being a New Supervisor<br>
-				<input type='checkbox' name='training' value='test'>Being a New Manager<br>
-				<input type='checkbox' name='training' value='test'>Develop Healthy Workplace Relationships<br>
-				<input type='checkbox' name='training' value='test'>Showing Workplace Leadership<br>
-				<input type='checkbox' name='training' value='test'>Developing and Managing Teams and Individuals<br>
-				<input type='checkbox' name='training' value='test'>Train The Trainer<br>
-				<input type='checkbox' name='training' value='test'>Managing your Work Priorities <br>
-			</div>
-			<div class="clear"></div>
+			<form action="http://www.panachetraining.com.au/cgi-sys/formmail.pl" method="post" name="hgmailer">
+				<input type="hidden" name="recipient" value="info@panachetraining.com.au">
+				<input type="hidden" name="subject" value="panachetraining.com.au">
+
+				<div id="maincontent">
+						<h1>Register Your Interest</h1>
+						<b>Your Name:</b><input class="inputText" type="text" name="name"><br/>
+						<br/>
+						<b>Your City:</b><input class="inputText"  type="text" name="city"><br/>
+						<br/>
+						<b>Your Email:</b><input class="inputText"  type="text" name="email"><br/>
+						<br/>
+						<br/>
+						<input class="panacheButton" type="button" value="Send" onclick="hgsubmit();">
+				</div>
+				<div id='separator'></div>
+				<div id="sidecontent">
+
+						<h2>What are you interested in?</h2>
+						<input type='checkbox' name='Accounting for Non Accountants' value='Im interested!'>Accounting for Non Accountants<br>
+						<input type='checkbox' name='Finance For Non-Financial Managers' value='Im interested!'>Finance For Non-Financial Managers<br>
+						<input type='checkbox' name='Business Writing' value='Im interested!'>Business Writing<br>
+						<input type='checkbox' name='Contract Management' value='Im interested!'>Contract Management<br>
+						<input type='checkbox' name='Strategic Planning' value='Im interested!'>Strategic Planning<br>
+						<input type='checkbox' name='Business Planning' value='Im interested!'>Business Planning<br>
+						<input type='checkbox' name='Operational Planning' value='Im interested!'>Operational Planning<br>
+						<input type='checkbox' name='Budgeting and Performance Measurement' value='Im interested!'>Budgeting and Performance Measurement<br>
+						<input type='checkbox' name='Developing and Managing KPIs' value='Im interested!'>Developing and Managing KPI's<br>
+						<input type='checkbox' name='The Balanced Scorecard and Dashboard Reporting' value='Im interested!'>The Balanced Scorecard and Dashboard Reporting<br>
+						<input type='checkbox' name='Workplace Safety' value='Im interested!'>Workplace Safety<br>
+						<input type='checkbox' name='Handling and Managing Conflict' value='Im interested!'>Handling and Managing Conflict<br>
+						<input type='checkbox' name='Implementing Customer Service' value='Im interested!'>Implementing Customer Service<br>
+						<input type='checkbox' name='Managing Customer Service' value='Im interested!'>Managing Customer Service<br>
+						<input type='checkbox' name='Continuous Improvement' value='Im interested!'>Continuous Improvement<br>
+						<input type='checkbox' name='Time Management' value='Im interested!'>Time Management<br>
+						<input type='checkbox' name='Being a New Supervisor' value='Im interested!'>Being a New Supervisor<br>
+						<input type='checkbox' name='Being a New Manager' value='Im interested!'>Being a New Manager<br>
+						<input type='checkbox' name='Develop Healthy Workplace Relationships' value='Im interested!'>Develop Healthy Workplace Relationships<br>
+						<input type='checkbox' name='Showing Workplace Leadership' value='Im interested!'>Showing Workplace Leadership<br>
+						<input type='checkbox' name='Developing and Managing Teams and Individuals' value='Im interested!'>Developing and Managing Teams and Individuals<br>
+						<input type='checkbox' name='Train The Trainer' value='Im interested!'>Train The Trainer<br>
+						<input type='checkbox' name='Managing your Work Priorities' value='Im interested!'>Managing your Work Priorities <br>
+					</div>
+					<div class="clear"></div>
+			</form>
 		</div>
 		<div id="footer">
 			&copy; Copyright 2014<br/>
@@ -86,6 +93,19 @@
 		<div class="bottomSpace"></div>
 	</div>
 	<script type='text/javascript' src='scripts/script.js'></script>
+
+	<script type="text/javascript">
+		function hgsubmit() {
+			if (/\S+/.test(document.hgmailer.name.value) == false) alert ("Please provide your name.");
+			else if (/^\S+@[a-z0-9_.-]+\.[a-z]{2,6}$/i.test(document.hgmailer.email.value) == false) alert ("Please check your email address.");
+			else if (/\S+/.test(document.hgmailer.city.value) == false) alert ("Please check your city.");
+			else {
+				document.hgmailer.submit();
+				alert ('Thank you!');
+			}
+		}
+	</script>
+
 
 </body>
 </html>
